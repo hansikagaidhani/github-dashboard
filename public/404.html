@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GitHub Dashboard</title>
+    <script>
+      // GitHub Pages serves 404 for any path it doesn't know about.
+      // This page encodes the intended path into the query string and
+      // redirects to index.html, where the script below restores it.
+      var base = '/github-dashboard';
+      var path = globalThis.location.pathname.slice(base.length) || '/';
+      var search = globalThis.location.search;
+      var hash = globalThis.location.hash;
+      var redirect = globalThis.location.origin + base + '/?path=' +
+        encodeURIComponent(path + search) + hash;
+      globalThis.location.replace(redirect);
+    </script>
+  </head>
+  <body></body>
+</html>

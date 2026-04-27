@@ -9,7 +9,7 @@ import UserPage from './pages/UserPage.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/github-dashboard">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/user/:username" element={<UserPage />} />

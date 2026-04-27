@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>data-dashboard</title>
+    <title>GitHub Dashboard</title>
+    <script>
+      // Restore the path that 404.html encoded into the query string.
+      (function () {
+        var params = new URLSearchParams(globalThis.location.search);
+        var path = params.get('path');
+        if (path) {
+          params.delete('path');
+          var remaining = params.toString();
+          globalThis.history.replaceState(
+            null, null,
+            '/github-dashboard' + path + (remaining ? '?' + remaining : '') + globalThis.location.hash
+          );
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
