@@ -58,15 +58,15 @@ export function LanguagePieChart({ repos }) {
     <div className={styles.wrapper}>
       <h3 className={styles.title}>Language Distribution</h3>
       <ResponsiveContainer width="100%" height={300}>
-        <PieChart>
+        <PieChart margin={{ top: 28, right: 0, bottom: 0, left: 0 }}>
           <Pie
             data={coloredSlices}
             dataKey="value"
             nameKey="name"
             cx="50%"
-            cy="45%"
-            outerRadius={100}
-            innerRadius={48}
+            cy="50%"
+            outerRadius={85}
+            innerRadius={42}
             paddingAngle={2}
             label={renderLabel}
             labelLine={false}
