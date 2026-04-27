@@ -1,0 +1,56 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1.5px solid;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.icon {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.notFound {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+.rateLimit {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e40af;
+}
+
+:global([data-theme="dark"]) .error {
+  background: #450a0a;
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+:global([data-theme="dark"]) .notFound {
+  background: #2d1a03;
+  border-color: #92400e;
+  color: #fcd34d;
+}
+
+:global([data-theme="dark"]) .rateLimit {
+  background: #0f1f3d;
+  border-color: #1e3a8a;
+  color: #93c5fd;
+}

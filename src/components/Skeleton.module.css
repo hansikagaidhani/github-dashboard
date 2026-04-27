@@ -1,0 +1,138 @@
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.block {
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base)  25%,
+    var(--skeleton-shine) 50%,
+    var(--skeleton-base)  75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+/* ── ProfileCard ── */
+.profileCard {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base)  25%,
+    var(--skeleton-shine) 50%,
+    var(--skeleton-base)  75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.nameLarge  { height: 22px; width: 45%; }
+.nameSmall  { height: 16px; width: 25%; }
+.bio        { height: 14px; width: 80%; }
+.bioShort   { width: 55%; }
+.metaRow    { display: flex; gap: 12px; margin-top: 4px; }
+.metaChip   { height: 14px; width: 100px; }
+
+/* ── StatRow ── */
+.statRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.statCard {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.statIcon  { height: 22px; width: 22px; border-radius: 4px; }
+.statValue { height: 28px; width: 60%; }
+.statLabel { height: 12px; width: 75%; }
+
+/* ── Charts ── */
+.charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.chartCard {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chartTitle { height: 18px; width: 60%; }
+.chartBody  { height: 240px; border-radius: 8px; }
+
+/* ── RepoTable ── */
+.tableCard {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.tableHead {
+  display: flex;
+  gap: 16px;
+  padding: 14px 16px;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.tableHeadCell { height: 12px; }
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--bg-subtle);
+}
+
+.tableRow:last-child { border-bottom: none; }
+
+.rowName { height: 14px; flex: 2; }
+.rowChip { height: 22px; width: 70px; border-radius: 99px; }
+.rowNum  { height: 14px; width: 40px; margin-left: auto; }
+.rowDate { height: 14px; width: 80px; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .charts { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .statRow { grid-template-columns: repeat(2, 1fr); }
+}
